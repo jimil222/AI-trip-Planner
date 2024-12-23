@@ -36,7 +36,7 @@ function PlaceCardItem({ place }) {
                 </p>
                 <div className="flex justify-end">
                 <Link to={'https://www.google.com/maps/search/?api=1&query='+place.placeName} target='_blank'>
-                <Button><FaMapLocationDot /></Button>
+                <Button className="bg-[#6c4af2]"><FaMapLocationDot /></Button>
                 </Link>
                 </div>
             </div>
