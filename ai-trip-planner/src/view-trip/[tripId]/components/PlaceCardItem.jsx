@@ -26,21 +26,22 @@ function PlaceCardItem({ place }) {
       }
     return (
 
-        <div className='border rounded-xl p-3 mt-2 flex gap-5 hover:scale-105 transition-all hover:shadow-md cursor-pointer'>
-            <img src={photoUrl?photoUrl:"/placeholder.jpg"} className='w-[130px] h-[130px] rounded-xl object-cover' alt="" />
-            <div className="">
-                <h2 className='font-semibold underline text-justify text-[15px]'>{place.placeName}</h2>
-                <p className='text-sm text-gray-800 mt-2'>{place.placeDetails}</p>
-                <p className="text-sm text-gray-800 mt-2">
-                    <span className='font-semibold'>Timing/Travel Details:</span> {place.travelTime}
-                </p>
-                <div className="flex justify-end">
-                <Link to={'https://www.google.com/maps/search/?api=1&query='+place.placeName} target='_blank'>
-                <Button className="bg-[#6c4af2]"><FaMapLocationDot /></Button>
-                </Link>
-                </div>
-            </div>
-        </div>
+      <div className='border rounded-xl p-3 mt-2 flex flex-col sm:flex-row gap-5 hover:scale-105 transition-all hover:shadow-md cursor-pointer'>
+      <img src={photoUrl ? photoUrl : "/placeholder.jpg"} className='w-full sm:w-[130px] h-[130px] rounded-xl object-cover' alt="" />
+      <div className="flex flex-col">
+          <h2 className='font-semibold text-justify text-[15px]'>{place.placeName}</h2>
+          <p className='text-sm text-gray-800 mt-2'>{place.placeDetails}</p>
+          <p className="text-sm text-gray-800 mt-2">
+              <span className='font-semibold'>Timing/Travel Details:</span> {place.travelTime}
+          </p>
+          <div className="flex justify-end mt-3 sm:mt-0">
+              <Link to={'https://www.google.com/maps/search/?api=1&query=' + place.placeName} target='_blank'>
+                  <Button className="bg-[#6c4af2]"><FaMapLocationDot /></Button>
+              </Link>
+          </div>
+      </div>
+  </div>
+  
     )
 }
 

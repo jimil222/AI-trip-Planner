@@ -3,7 +3,7 @@ import PlaceCardItem from './PlaceCardItem';
 
 function PlacesToVisit({ trip }) {
   return (
-    <div className='mt-4'>
+    <div className="mt-4">
       <h2 className="font-bold text-lg mb-5">Places to Visit</h2>
       <div className="">
         {trip.tripData?.itinerary &&
@@ -13,15 +13,14 @@ function PlacesToVisit({ trip }) {
               <div key={index} className="mb-5">
                 {/* Display the day number */}
                 <h2 className="font-bold text-lg mb-2">Day {dayKey.replace("day", "")}</h2>
-                <div className="pl-4 grid md:grid-cols-2 gap-5">
+                <div className="pl-4 grid gap-5 grid-cols-1 md:grid-cols-2">
                   {dayData.activities.map((activity, index) => (
                     <div key={index} className="mb-2">
-                      <PlaceCardItem place={activity}/>
-                      {/* Display the travel time */}
-                      
+                      <PlaceCardItem place={activity} />
                     </div>
                   ))}
                 </div>
+
               </div>
             ))}
       </div>
